@@ -12,6 +12,8 @@ Only public npm dependencies are used. There is no navigation framework, UI libr
 Use Node 22 or newer and pnpm 11.1.1 through Corepack. Android requires JDK 17 and an Android SDK; iOS requires macOS/Xcode.
 
 ```sh
+git clone https://github.com/francesc79/keyboard-controller-repro.git
+cd keyboard-controller-repro
 corepack enable
 pnpm install --frozen-lockfile
 pnpm typecheck
@@ -111,4 +113,4 @@ The default published checkout is **original/unpatched**. Changing variants inte
 - [KAV comment draft](upstream/kav-comment.md)
 - Related reports: [#1514](https://github.com/kirillzyusko/react-native-keyboard-controller/issues/1514), [#1594](https://github.com/kirillzyusko/react-native-keyboard-controller/issues/1594), [#1134](https://github.com/kirillzyusko/react-native-keyboard-controller/issues/1134).
 
-Use the URL of this repository as the reproduction link when submitting. No issue, comment, commit, or push is performed by the scripts.
+Use [this reproduction repository](https://github.com/francesc79/keyboard-controller-repro) as the reproduction link when submitting. No issue, comment, commit, or push is performed by the scripts.
