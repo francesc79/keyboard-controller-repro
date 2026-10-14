@@ -1,0 +1,220 @@
+{
+  "controller": "1.22.7",
+  "method": "Actual installed components; mocked native measurements, keyboard events and Reanimated. No native race occurrence is inferred from these tests.",
+  "results": {
+    "original": {
+      "passed": 8,
+      "failed": 17,
+      "total": 25,
+      "tests": [
+        {
+          "name": "retries an unlaid-out native view instead of caching a zero offset",
+          "status": "failed"
+        },
+        {
+          "name": "accepts a measured view at the screen origin without retrying",
+          "status": "passed"
+        },
+        {
+          "name": "stops pending retries after unmount",
+          "status": "failed"
+        },
+        {
+          "name": "ignores an older native response after a newer layout",
+          "status": "failed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":0,\"height\":474}",
+          "status": "failed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":360,\"height\":0}",
+          "status": "failed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":-1,\"height\":474}",
+          "status": "failed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":null,\"height\":474}",
+          "status": "failed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":360,\"height\":null}",
+          "status": "failed"
+        },
+        {
+          "name": "ignores a response when the native target changes",
+          "status": "failed"
+        },
+        {
+          "name": "ignores a response after unmount and initializes a remount independently",
+          "status": "failed"
+        },
+        {
+          "name": "initializes usable height when mounted with the keyboard already open",
+          "status": "failed"
+        },
+        {
+          "name": "keeps children mounted across enabled true, false, true with an open keyboard",
+          "status": "passed"
+        },
+        {
+          "name": "recovers from prolonged zero measurements and stops measuring after unmount",
+          "status": "failed"
+        },
+        {
+          "name": "scrolls above a footer even when the field already fits above the IME",
+          "status": "failed"
+        },
+        {
+          "name": "keeps fullscreen scrolling bounded by the keyboard",
+          "status": "passed"
+        },
+        {
+          "name": "reveals a partially clipped field in a small viewport",
+          "status": "failed"
+        },
+        {
+          "name": "does not scroll an input owned by a nested scroller",
+          "status": "passed"
+        },
+        {
+          "name": "waits for the new focus selection and then reveals that input",
+          "status": "failed"
+        },
+        {
+          "name": "uses the resized viewport when visibility is requested after layout changes",
+          "status": "failed"
+        },
+        {
+          "name": "preserves upstream scrolling when the IME changes height without hiding",
+          "status": "passed"
+        },
+        {
+          "name": "reveals the caret of a multiline input using the viewport boundary",
+          "status": "failed"
+        },
+        {
+          "name": "keeps the IME as the limit when the viewport extends below it",
+          "status": "passed"
+        },
+        {
+          "name": "does not scroll a field already inside the viewport and above the IME",
+          "status": "passed"
+        },
+        {
+          "name": "preserves the disabled scroll contract",
+          "status": "passed"
+        }
+      ]
+    },
+    "patched": {
+      "passed": 25,
+      "failed": 0,
+      "total": 25,
+      "tests": [
+        {
+          "name": "retries an unlaid-out native view instead of caching a zero offset",
+          "status": "passed"
+        },
+        {
+          "name": "accepts a measured view at the screen origin without retrying",
+          "status": "passed"
+        },
+        {
+          "name": "stops pending retries after unmount",
+          "status": "passed"
+        },
+        {
+          "name": "ignores an older native response after a newer layout",
+          "status": "passed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":0,\"height\":474}",
+          "status": "passed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":360,\"height\":0}",
+          "status": "passed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":-1,\"height\":474}",
+          "status": "passed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":null,\"height\":474}",
+          "status": "passed"
+        },
+        {
+          "name": "waits for usable native dimensions {\"width\":360,\"height\":null}",
+          "status": "passed"
+        },
+        {
+          "name": "ignores a response when the native target changes",
+          "status": "passed"
+        },
+        {
+          "name": "ignores a response after unmount and initializes a remount independently",
+          "status": "passed"
+        },
+        {
+          "name": "initializes usable height when mounted with the keyboard already open",
+          "status": "passed"
+        },
+        {
+          "name": "keeps children mounted across enabled true, false, true with an open keyboard",
+          "status": "passed"
+        },
+        {
+          "name": "recovers from prolonged zero measurements and stops measuring after unmount",
+          "status": "passed"
+        },
+        {
+          "name": "scrolls above a footer even when the field already fits above the IME",
+          "status": "passed"
+        },
+        {
+          "name": "keeps fullscreen scrolling bounded by the keyboard",
+          "status": "passed"
+        },
+        {
+          "name": "reveals a partially clipped field in a small viewport",
+          "status": "passed"
+        },
+        {
+          "name": "does not scroll an input owned by a nested scroller",
+          "status": "passed"
+        },
+        {
+          "name": "waits for the new focus selection and then reveals that input",
+          "status": "passed"
+        },
+        {
+          "name": "uses the resized viewport when visibility is requested after layout changes",
+          "status": "passed"
+        },
+        {
+          "name": "preserves upstream scrolling when the IME changes height without hiding",
+          "status": "passed"
+        },
+        {
+          "name": "reveals the caret of a multiline input using the viewport boundary",
+          "status": "passed"
+        },
+        {
+          "name": "keeps the IME as the limit when the viewport extends below it",
+          "status": "passed"
+        },
+        {
+          "name": "does not scroll a field already inside the viewport and above the IME",
+          "status": "passed"
+        },
+        {
+          "name": "preserves the disabled scroll contract",
+          "status": "passed"
+        }
+      ]
+    }
+  }
+}

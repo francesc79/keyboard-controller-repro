@@ -1,0 +1,9 @@
+node_modules/
+.expo/
+.results/
+android/
+ios/
+build/
+*.apk
+*.tgz
+*.zip

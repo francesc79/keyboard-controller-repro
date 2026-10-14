@@ -1,0 +1,11 @@
+packages:
+  - '.'
+
+optimisticRepeatInstall: false
+
+overrides:
+  '@react-native/jest-preset': '0.86.2'
+  '@react-native/metro-config': '0.86.2'
+
+allowBuilds:
+  esbuild: true

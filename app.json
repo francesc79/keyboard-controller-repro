@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Keyboard Controller Repro",
+    "slug": "keyboard-controller-repro",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "android": {
+      "package": "org.example.keyboardrepro",
+      "softwareKeyboardLayoutMode": "resize"
+    },
+    "ios": {
+      "bundleIdentifier": "org.example.keyboardrepro"
+    },
+    "newArchEnabled": true
+  }
+}

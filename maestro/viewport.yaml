@@ -1,0 +1,16 @@
+appId: org.example.keyboardrepro
+name: Focused input fits inside bounded viewport
+---
+- launchApp
+- extendedWaitUntil:
+    visible:
+      id: KASV viewport
+    timeout: 120000
+- tapOn:
+    id: Focus last
+- waitForAnimationToEnd
+- tapOn:
+    id: Sample bounds
+- assertVisible:
+    id: bounds-status
+    text: 'VISIBLE:.*'

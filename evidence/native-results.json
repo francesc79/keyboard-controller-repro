@@ -1,0 +1,33 @@
+{
+  "controller": "1.22.7",
+  "environment": {
+    "device": "Huawei DUK-L09",
+    "android": "9",
+    "api": 28,
+    "ime": "Gboard",
+    "node": "24.15.0",
+    "pnpm": "11.1.1",
+    "minimumAndroidSdk": 24,
+    "nativeBuild": "PASS: assembleDebug, arm64-v8a"
+  },
+  "scenario": "Bounded viewport; focus last input; wait for IME; sample settled measureInWindow rectangles. Same native APK for both JS variants.",
+  "units": "React Native logical pixels (dp)",
+  "original": {
+    "maestroVisibilityAssertion": "PASS",
+    "readout": "VISIBLE: input=250.7 viewport=250.7 ime=351.0",
+    "screenshot": "android-original.png"
+  },
+  "patched": {
+    "maestroVisibilityAssertion": "PASS",
+    "readout": "VISIBLE: input=238.0 viewport=250.7 ime=351.0",
+    "screenshot": "android-patched.png"
+  },
+  "interpretation": "Native clipping was NOT REPRODUCED in this run. Both inputs are visible; the patched input has a larger lower gap. The flow asserts full-input visibility, not bottomOffset or caret spacing. These endpoints do not prove the absence of transient clipping.",
+  "notRun": [
+    "Native KAV zero/stale measurement race",
+    "Native fullscreen control",
+    "iOS",
+    "Other Android devices/API levels"
+  ],
+  "componentTests": "See component-tests.json for deterministic mocked native-response and keyboard-event cases."
+}
