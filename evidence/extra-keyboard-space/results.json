@@ -1,0 +1,332 @@
+{
+  "controller": "1.22.7",
+  "date": "2026-10-14",
+  "environment": {
+    "device": "Huawei DUK-L09",
+    "android": "9",
+    "api": 28,
+    "ime": "Gboard",
+    "expo": "57.0.18",
+    "reactNative": "0.86.3",
+    "react": "19.2.3",
+    "reanimated": "4.5.1",
+    "worklets": "0.10.1"
+  },
+  "method": "Same existing arm64 debug APK; only JS variants changed through pnpm. Programmatic focus to last input, wait for IME, optionally shift input by 24 dp and call the public assureFocusedInputVisible method, sample measureInWindow rectangles. No forced measurements or native code modifications.",
+  "fixture": {
+    "cardHeight": 160,
+    "headerHeight": 28,
+    "footerHeight": 40,
+    "bottomOffset": 16,
+    "mode": "insets",
+    "removeClippedSubviews": false,
+    "defaultScrollsChildToFocus": true,
+    "defaultExtraKeyboardSpace": 0
+  },
+  "videoMethod": "Actual ADB PNG screen captures encoded as variable-frame-rate H.264 MP4; capture intervals preserved; approximately 1\u20132 fps, unsuitable for judging animation smoothness.",
+  "interpretation": "The original remained visible with Android native focus scrolling enabled, including after the dynamic-layout control. With scrollsChildToFocus=false, the original clipped the input for all four tested extraKeyboardSpace values. The patched extra=0 variant revealed it. This does not establish a defect with default Android focus scrolling, prove that the production app requires the patch, or establish iOS behavior.",
+  "componentExtraResults": {
+    "original": [
+      {
+        "name": "respects viewport visibility with extraKeyboardSpace=-188",
+        "status": "failed"
+      },
+      {
+        "name": "respects viewport visibility with extraKeyboardSpace=0",
+        "status": "failed"
+      },
+      {
+        "name": "respects viewport visibility with extraKeyboardSpace=40",
+        "status": "failed"
+      },
+      {
+        "name": "respects viewport visibility with extraKeyboardSpace=188",
+        "status": "failed"
+      }
+    ],
+    "patched": [
+      {
+        "name": "respects viewport visibility with extraKeyboardSpace=-188",
+        "status": "passed"
+      },
+      {
+        "name": "respects viewport visibility with extraKeyboardSpace=0",
+        "status": "passed"
+      },
+      {
+        "name": "respects viewport visibility with extraKeyboardSpace=40",
+        "status": "passed"
+      },
+      {
+        "name": "respects viewport visibility with extraKeyboardSpace=188",
+        "status": "passed"
+      }
+    ]
+  },
+  "results": [
+    {
+      "case": "original-native-off-extra--100-bounded",
+      "variant": "original",
+      "extraKeyboardSpace": -100,
+      "scrollsChildToFocus": false,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "readout": "CLIPPED: input=339.0 viewport=289.7 ime=351.0",
+      "fullInputVisible": false,
+      "inputBottom": 339.0,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": -49.3,
+      "shifted": false
+    },
+    {
+      "case": "original-native-off-extra-0-bounded",
+      "variant": "original",
+      "extraKeyboardSpace": 0,
+      "scrollsChildToFocus": false,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "readout": "CLIPPED: input=339.0 viewport=289.7 ime=351.0",
+      "fullInputVisible": false,
+      "inputBottom": 339.0,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": -49.3,
+      "shifted": false,
+      "screenshot": "original-native-focus-off-extra-0.png",
+      "videoMethod": "Low-frame-rate ADB PNG capture; capture intervals preserved; no animation-timing claims.",
+      "videoFrames": 13,
+      "videoDurationSeconds": 9.93,
+      "video": "original-native-focus-off-extra-0.mp4"
+    },
+    {
+      "case": "original-native-off-extra-100-bounded",
+      "variant": "original",
+      "extraKeyboardSpace": 100,
+      "scrollsChildToFocus": false,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "readout": "CLIPPED: input=339.0 viewport=289.7 ime=351.0",
+      "fullInputVisible": false,
+      "inputBottom": 339.0,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": -49.3,
+      "shifted": false
+    },
+    {
+      "case": "original-native-off-extra-40-bounded-video",
+      "variant": "original",
+      "extraKeyboardSpace": 40,
+      "scrollsChildToFocus": false,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "readout": "CLIPPED: input=339.0 viewport=289.7 ime=351.0",
+      "fullInputVisible": false,
+      "inputBottom": 339.0,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": -49.3,
+      "shifted": false,
+      "screenshot": "original-native-focus-off-extra-40.png",
+      "videoMethod": "Low-frame-rate ADB PNG capture; capture intervals preserved; no animation-timing claims.",
+      "videoFrames": 13,
+      "videoDurationSeconds": 10.0,
+      "video": "original-native-focus-off-extra-40.mp4"
+    },
+    {
+      "case": "original-native-off-extra-40-bounded",
+      "variant": "original",
+      "extraKeyboardSpace": 40,
+      "scrollsChildToFocus": false,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "readout": "CLIPPED: input=339.0 viewport=289.7 ime=351.0",
+      "fullInputVisible": false,
+      "inputBottom": 339.0,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": -49.3,
+      "shifted": false
+    },
+    {
+      "case": "original-native-on-extra--100-bounded-shift",
+      "variant": "original",
+      "extraKeyboardSpace": -100,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "shifted": true,
+      "readout": "VISIBLE: input=289.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 289.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 0.0
+    },
+    {
+      "case": "original-native-on-extra--100-bounded",
+      "variant": "original",
+      "extraKeyboardSpace": -100,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "readout": "VISIBLE: input=289.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 289.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 0.0,
+      "shifted": false
+    },
+    {
+      "case": "original-native-on-extra-0-bounded-shift",
+      "variant": "original",
+      "extraKeyboardSpace": 0,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "shifted": true,
+      "readout": "VISIBLE: input=289.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 289.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 0.0
+    },
+    {
+      "case": "original-native-on-extra-0-bounded",
+      "variant": "original",
+      "extraKeyboardSpace": 0,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "readout": "VISIBLE: input=289.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 289.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 0.0,
+      "shifted": false,
+      "screenshot": "original-native-focus-on-extra-0.png"
+    },
+    {
+      "case": "original-native-on-extra-100-bounded-shift",
+      "variant": "original",
+      "extraKeyboardSpace": 100,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "shifted": true,
+      "readout": "VISIBLE: input=289.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 289.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 0.0
+    },
+    {
+      "case": "original-native-on-extra-100-bounded",
+      "variant": "original",
+      "extraKeyboardSpace": 100,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "readout": "VISIBLE: input=289.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 289.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 0.0,
+      "shifted": false
+    },
+    {
+      "case": "original-native-on-extra-40-bounded-shift",
+      "variant": "original",
+      "extraKeyboardSpace": 40,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "shifted": true,
+      "readout": "VISIBLE: input=289.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 289.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 0.0
+    },
+    {
+      "case": "original-native-on-extra-40-bounded",
+      "variant": "original",
+      "extraKeyboardSpace": 40,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "readout": "VISIBLE: input=289.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 289.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 0.0,
+      "shifted": false
+    },
+    {
+      "case": "patched-native-off-extra-0-bounded",
+      "variant": "patched",
+      "extraKeyboardSpace": 0,
+      "scrollsChildToFocus": false,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "shifted": false,
+      "readout": "VISIBLE: input=277.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 277.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 12.0,
+      "screenshot": "patched-native-focus-off-extra-0.png",
+      "videoMethod": "Low-frame-rate ADB PNG capture; capture intervals preserved; no animation-timing claims.",
+      "videoFrames": 13,
+      "videoDurationSeconds": 9.96,
+      "video": "patched-native-focus-off-extra-0.mp4"
+    },
+    {
+      "case": "patched-native-on-extra-0-bounded-shift",
+      "variant": "patched",
+      "extraKeyboardSpace": 0,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "shifted": true,
+      "readout": "VISIBLE: input=277.3 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 277.3,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 12.4
+    },
+    {
+      "case": "patched-native-on-extra-0-bounded",
+      "variant": "patched",
+      "extraKeyboardSpace": 0,
+      "scrollsChildToFocus": true,
+      "removeClippedSubviews": false,
+      "layout": "bounded",
+      "shifted": false,
+      "readout": "VISIBLE: input=277.7 viewport=289.7 ime=351.0",
+      "fullInputVisible": true,
+      "inputBottom": 277.7,
+      "viewportBottom": 289.7,
+      "imeTop": 351.0,
+      "lowerGap": 12.0
+    }
+  ],
+  "notRun": [
+    "iOS",
+    "Other Android devices/API levels",
+    "Native KAV measurement race",
+    "Native fullscreen control",
+    "Patched variant with nonzero extraKeyboardSpace",
+    "Default removeClippedSubviews=true comparison"
+  ]
+}

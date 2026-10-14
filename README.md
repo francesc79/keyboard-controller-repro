@@ -24,12 +24,12 @@ pnpm compare
 
 | Controller | Passed | Failed |
 | --- | ---: | ---: |
-| Original 1.22.7 | 8 | 17 |
-| Patched 1.22.7 | 25 | 0 |
+| Original 1.22.7 | 8 | 21 |
+| Patched 1.22.7 | 29 | 0 |
 
 Expected regression failures are captured by `pnpm compare`; the command succeeds only when the original exposes failures and the patched variant passes. Full local output goes to ignored `.results/`. The shareable result summary is [component-tests.json](evidence/component-tests.json).
 
-These 25 tests include fullscreen and already-visible controls, viewport changes followed by an event, focus/selection timing, multiline caret, invalid native dimensions, stale/out-of-order responses, target changes and unmount/remount. They do not establish the frequency of a native race.
+These 29 tests include fullscreen and already-visible controls, viewport changes followed by an event, focus/selection timing, multiline caret, invalid native dimensions, stale/out-of-order responses, target changes and unmount/remount. They do not establish the frequency of a native race.
 
 ## Android: bounded ScrollView
 
@@ -67,7 +67,7 @@ Reopen the already-built app. Both variants use the same native 1.22.7 code; the
 pnpm original
 ```
 
-## Recorded native results
+## Initial native results
 
 The Android debug build succeeded with minSdk 24. On a Huawei DUK-L09 running Android 9 / API 28 with Gboard, the supplied Maestro visibility flow passed for **both** variants:
 
@@ -86,7 +86,7 @@ To run the same optional check with Maestro installed:
 maestro test maestro/viewport.yaml
 ```
 
-The natural KAV race, native fullscreen control, iOS and other Android devices/API levels are **NOT RUN**. Local verification used Node 24.15.0 and pnpm 11.1.1. A consistently failing native example is still needed before presenting this as a confirmed device reproduction upstream.
+The natural KAV race, native fullscreen control, iOS and other Android devices/API levels are **NOT RUN**. Local verification used Node 24.15.0 and pnpm 11.1.1. The table above records the initial run, before the comparison controls were added. A later [extraKeyboardSpace comparison](evidence/extra-keyboard-space/README.md) reproduces clipping with Android native focus scrolling explicitly disabled; it also documents the default-focus controls, component tests and videos.
 
 ## Native measurement timing
 

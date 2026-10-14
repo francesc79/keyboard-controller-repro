@@ -1,6 +1,6 @@
 # KeyboardAwareScrollView ignores its own viewport bottom when it ends above the IME
 
-Draft status: the component-level regression is deterministic, but native clipping was not reproduced in the recorded Android run. Both native variants passed the full-input visibility check; the patch increased the lower gap. Do not submit this draft as a confirmed native clipping reproduction without additional evidence.
+Historical issue draft. The follow-up [extraKeyboardSpace comparison](../evidence/extra-keyboard-space/README.md) reproduces native clipping only with Android native focus scrolling disabled. The original remains visible in the executed default-focus controls. Use the [follow-up reply](extra-keyboard-space-reply.md) for the precise scope and evidence.
 
 ## Description
 
@@ -35,7 +35,7 @@ The deterministic viewport case uses a 640-high window, 250-high keyboard, Scrol
 ## Evidence and environment
 
 - React Native 0.86.3, Expo 57.0.18, React 19.2.3, Reanimated 4.5.1, Worklets 0.10.1, controller 1.22.7.
-- Actual installed component tests: original 8 pass/17 fail; proposed patch 25 pass/0 fail across both KAV/KASV groups. See `evidence/component-tests.json` for individual cases.
+- Actual installed component tests: original 8 pass/21 fail; proposed patch 29 pass/0 fail across both KAV/KASV groups. See `evidence/component-tests.json` for individual cases.
 - The component tests simulate native events/measurements. They are not native race recordings.
 - Consult the README for native results and platform limitations before submitting this draft.
 

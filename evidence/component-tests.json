@@ -4,8 +4,8 @@
   "results": {
     "original": {
       "passed": 8,
-      "failed": 17,
-      "total": 25,
+      "failed": 21,
+      "total": 29,
       "tests": [
         {
           "name": "retries an unlaid-out native view instead of caching a zero offset",
@@ -106,13 +106,29 @@
         {
           "name": "preserves the disabled scroll contract",
           "status": "passed"
+        },
+        {
+          "name": "respects viewport visibility with extraKeyboardSpace=-188",
+          "status": "failed"
+        },
+        {
+          "name": "respects viewport visibility with extraKeyboardSpace=0",
+          "status": "failed"
+        },
+        {
+          "name": "respects viewport visibility with extraKeyboardSpace=40",
+          "status": "failed"
+        },
+        {
+          "name": "respects viewport visibility with extraKeyboardSpace=188",
+          "status": "failed"
         }
       ]
     },
     "patched": {
-      "passed": 25,
+      "passed": 29,
       "failed": 0,
-      "total": 25,
+      "total": 29,
       "tests": [
         {
           "name": "retries an unlaid-out native view instead of caching a zero offset",
@@ -212,6 +228,22 @@
         },
         {
           "name": "preserves the disabled scroll contract",
+          "status": "passed"
+        },
+        {
+          "name": "respects viewport visibility with extraKeyboardSpace=-188",
+          "status": "passed"
+        },
+        {
+          "name": "respects viewport visibility with extraKeyboardSpace=0",
+          "status": "passed"
+        },
+        {
+          "name": "respects viewport visibility with extraKeyboardSpace=40",
+          "status": "passed"
+        },
+        {
+          "name": "respects viewport visibility with extraKeyboardSpace=188",
           "status": "passed"
         }
       ]
